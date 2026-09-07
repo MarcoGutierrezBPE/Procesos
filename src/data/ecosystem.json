@@ -1,0 +1,613 @@
+{
+  "meta": {
+    "nombre": "Ecosistema de agentes IA — Grid Haulmer",
+    "organizacion": "Haulmer",
+    "version": "0.2.0"
+  },
+  "capas": [
+    {
+      "id": "adquisicion",
+      "orden": 0,
+      "nombre": "Adquisición",
+      "descripcion": "Incorporar comercios al ecosistema: venta, marketing, partners y abastecimiento."
+    },
+    {
+      "id": "activacion",
+      "orden": 1,
+      "nombre": "Activación",
+      "descripcion": "Llevar al comercio desde la compra hasta el primer uso real."
+    },
+    {
+      "id": "uso",
+      "orden": 2,
+      "nombre": "Uso",
+      "descripcion": "Sostener la operación diaria: soporte, clasificación y continuidad del servicio."
+    },
+    {
+      "id": "expansion",
+      "orden": 3,
+      "nombre": "Expansión",
+      "descripcion": "Crecer el valor del comercio ya activo y cuidar la cartera de mayor peso."
+    },
+    {
+      "id": "meta",
+      "orden": 4,
+      "nombre": "Meta System",
+      "descripcion": "Capa transversal que sostiene a todas las estrellas: personas, dinero, infraestructura y riesgo."
+    }
+  ],
+  "nodos": [
+    {
+      "id": "ag_ventas",
+      "nombre": "Agente IA Ventas",
+      "capa": "adquisicion",
+      "tipo": "agente",
+      "estado": "produccion",
+      "descripcion": "Atiende a quien quiere comprar, califica el caso y coordina el siguiente paso comercial.",
+      "pos": {
+        "x": 282,
+        "y": 252
+      },
+      "posEmbudo": {
+        "x": 430,
+        "y": 380
+      }
+    },
+    {
+      "id": "eq_ventas",
+      "nombre": "Ventas",
+      "capa": "adquisicion",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Equipo comercial que cierra y acompaña la incorporación de comercios.",
+      "pos": {
+        "x": 356,
+        "y": 292
+      }
+    },
+    {
+      "id": "eq_marketing",
+      "nombre": "Marketing",
+      "capa": "adquisicion",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Genera demanda y el relato con el que un comercio llega a Haulmer.",
+      "pos": {
+        "x": 285,
+        "y": 336
+      }
+    },
+    {
+      "id": "eq_partnership",
+      "nombre": "Partnership",
+      "capa": "adquisicion",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Trabaja con partners para incorporar comercios al ecosistema.",
+      "pos": {
+        "x": 211,
+        "y": 296
+      }
+    },
+    {
+      "id": "eq_supply",
+      "nombre": "Supply",
+      "capa": "adquisicion",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Asegura que el producto llegue al comercio cuando la venta se cierra.",
+      "pos": {
+        "x": 209,
+        "y": 212
+      }
+    },
+    {
+      "id": "ag_onboarding",
+      "nombre": "Agente IA Onboarding",
+      "capa": "activacion",
+      "tipo": "agente",
+      "estado": "produccion",
+      "descripcion": "Acompaña al comercio recién comprado hasta que activa y hace su primer uso.",
+      "pos": {
+        "x": 557,
+        "y": 171
+      },
+      "posFlujo": {
+        "x": 1080,
+        "y": 220
+      },
+      "posEmbudo": {
+        "x": 500,
+        "y": 720
+      }
+    },
+    {
+      "id": "eq_onboarding",
+      "nombre": "Onboarding",
+      "capa": "activacion",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Equipo que habilita al comercio entre la compra y el primer momento de valor.",
+      "pos": {
+        "x": 556,
+        "y": 255
+      }
+    },
+    {
+      "id": "ag_clasificador",
+      "nombre": "Clasificador de Intención",
+      "capa": "uso",
+      "tipo": "agente",
+      "estado": "produccion",
+      "descripcion": "Lee el mensaje y decide si quien escribe quiere comprar o necesita atención.",
+      "pos": {
+        "x": 879,
+        "y": 276
+      },
+      "posFlujo": {
+        "x": 700,
+        "y": 470
+      },
+      "posEmbudo": {
+        "x": 860,
+        "y": 200
+      }
+    },
+    {
+      "id": "ag_sac_haulmer",
+      "nombre": "Agente IA SAC - Haulmer",
+      "capa": "uso",
+      "tipo": "agente",
+      "estado": "produccion",
+      "descripcion": "Resuelve consultas de productos Haulmer buscando primero en el conocimiento, antes de derivar.",
+      "pos": {
+        "x": 911,
+        "y": 198
+      },
+      "posFlujo": {
+        "x": 320,
+        "y": 220
+      },
+      "posEmbudo": {
+        "x": 1260,
+        "y": 560
+      }
+    },
+    {
+      "id": "ag_sac_hosting",
+      "nombre": "Agente IA SAC - Hosting",
+      "capa": "uso",
+      "tipo": "agente",
+      "estado": "produccion",
+      "descripcion": "Atiende fallas y consultas de hosting con la base de ese dominio.",
+      "pos": {
+        "x": 930,
+        "y": 342
+      },
+      "posFlujo": {
+        "x": 540,
+        "y": 160
+      }
+    },
+    {
+      "id": "ag_partner",
+      "nombre": "Agente IA Partner",
+      "capa": "uso",
+      "tipo": "agente",
+      "estado": "produccion",
+      "descripcion": "Atiende a partners en el espacio de Servicio de Atención Partners.",
+      "pos": {
+        "x": 847,
+        "y": 353
+      },
+      "posFlujo": {
+        "x": 860,
+        "y": 160
+      },
+      "posEmbudo": {
+        "x": 860,
+        "y": 840
+      }
+    },
+    {
+      "id": "eq_customer_service",
+      "nombre": "Customer Service",
+      "capa": "uso",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Cola humana de soporte cuando el agente no puede cerrar el caso.",
+      "pos": {
+        "x": 796,
+        "y": 287
+      }
+    },
+    {
+      "id": "eq_opti",
+      "nombre": "OPTI",
+      "capa": "uso",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Opera la continuidad del servicio cuando el comercio ya está en uso.",
+      "pos": {
+        "x": 827,
+        "y": 209
+      }
+    },
+    {
+      "id": "eq_customer_success",
+      "nombre": "Customer Success",
+      "capa": "expansion",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Cuida el crecimiento del comercio activo y anticipa señales de abandono.",
+      "pos": {
+        "x": 1149,
+        "y": 184
+      }
+    },
+    {
+      "id": "eq_cartera_preferente",
+      "nombre": "Cartera preferente",
+      "capa": "expansion",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Acompaña a los comercios de mayor valor de la cartera.",
+      "pos": {
+        "x": 1164,
+        "y": 266
+      }
+    },
+    {
+      "id": "eq_finops",
+      "nombre": "FinOps",
+      "capa": "meta",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Sostiene el dinero y la operación financiera de todas las estrellas.",
+      "pos": {
+        "x": 220,
+        "y": 760
+      }
+    },
+    {
+      "id": "eq_people",
+      "nombre": "People",
+      "capa": "meta",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Personas, cultura y soporte interno de Haulmer.",
+      "pos": {
+        "x": 460,
+        "y": 760
+      }
+    },
+    {
+      "id": "ag_haulmerito",
+      "nombre": "Haulmerito",
+      "capa": "meta",
+      "tipo": "agente",
+      "estado": "produccion",
+      "descripcion": "Agente IA de People: atiende consultas internas de colaboradores.",
+      "pos": {
+        "x": 700,
+        "y": 760
+      }
+    },
+    {
+      "id": "eq_infra",
+      "nombre": "Infraestructura",
+      "capa": "meta",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Plataforma e infraestructura sobre la que corren los agentes y los sistemas.",
+      "pos": {
+        "x": 940,
+        "y": 760
+      }
+    },
+    {
+      "id": "eq_ciber",
+      "nombre": "Ciberseguridad",
+      "capa": "meta",
+      "tipo": "equipo",
+      "estado": "produccion",
+      "descripcion": "Protege el ecosistema frente a riesgo e incidentes de seguridad.",
+      "pos": {
+        "x": 1180,
+        "y": 760
+      }
+    },
+    {
+      "id": "cliente",
+      "nombre": "Cliente",
+      "capa": "flujo",
+      "tipo": "externo",
+      "estado": "produccion",
+      "descripcion": "Quien escribe. El mensaje parte de aquí y entra al clasificador.",
+      "posFlujo": {
+        "x": 700,
+        "y": 760
+      },
+      "posEmbudo": {
+        "x": 860,
+        "y": 70
+      }
+    },
+    {
+      "id": "det_existe_bd",
+      "nombre": "¿El número está en la base?",
+      "capa": "flujo",
+      "tipo": "determinista",
+      "estado": "produccion",
+      "descripcion": "Primera capa del embudo SAC: cruza el teléfono con la base de parámetros. Si no hay match, no sigue clasificando.",
+      "posEmbudo": {
+        "x": 1040,
+        "y": 380
+      }
+    },
+    {
+      "id": "det_tipificado",
+      "nombre": "¿A qué equipo según el tipificado?",
+      "capa": "flujo",
+      "tipo": "determinista",
+      "estado": "produccion",
+      "descripcion": "Segunda capa: el tipificado del clasificador decide si el caso va a SAC o a Onboarding.",
+      "posEmbudo": {
+        "x": 820,
+        "y": 540
+      }
+    },
+    {
+      "id": "det_partner",
+      "nombre": "¿Es Partner?",
+      "capa": "flujo",
+      "tipo": "determinista",
+      "estado": "produccion",
+      "descripcion": "Última capa, solo si el tipificado es SAC: el flag de partner cambia el agente de atención.",
+      "posEmbudo": {
+        "x": 1040,
+        "y": 700
+      }
+    }
+  ],
+  "aristas": [
+    {
+      "origen": "ag_ventas",
+      "destino": "eq_ventas",
+      "tipo": "flujo"
+    },
+    {
+      "origen": "ag_onboarding",
+      "destino": "eq_onboarding",
+      "tipo": "flujo"
+    },
+    {
+      "origen": "ag_sac_haulmer",
+      "destino": "eq_customer_service",
+      "tipo": "flujo"
+    },
+    {
+      "origen": "ag_sac_hosting",
+      "destino": "eq_customer_service",
+      "tipo": "flujo"
+    },
+    {
+      "origen": "ag_partner",
+      "destino": "eq_customer_service",
+      "tipo": "flujo"
+    },
+    {
+      "origen": "ag_haulmerito",
+      "destino": "eq_people",
+      "tipo": "flujo"
+    },
+    {
+      "origen": "cliente",
+      "destino": "ag_clasificador",
+      "tipo": "flujo",
+      "vista": "conversacion"
+    },
+    {
+      "origen": "ag_clasificador",
+      "destino": "ag_sac_haulmer",
+      "tipo": "flujo",
+      "vista": "conversacion"
+    },
+    {
+      "origen": "ag_clasificador",
+      "destino": "ag_sac_hosting",
+      "tipo": "flujo",
+      "vista": "conversacion"
+    },
+    {
+      "origen": "ag_clasificador",
+      "destino": "ag_partner",
+      "tipo": "flujo",
+      "vista": "conversacion"
+    },
+    {
+      "origen": "ag_clasificador",
+      "destino": "ag_onboarding",
+      "tipo": "flujo",
+      "vista": "conversacion"
+    },
+    {
+      "origen": "cliente",
+      "destino": "ag_clasificador",
+      "tipo": "flujo",
+      "vista": "embudo"
+    },
+    {
+      "origen": "ag_clasificador",
+      "destino": "ag_ventas",
+      "tipo": "flujo",
+      "vista": "embudo",
+      "condicion": "Ventas"
+    },
+    {
+      "origen": "ag_clasificador",
+      "destino": "det_existe_bd",
+      "tipo": "flujo",
+      "vista": "embudo",
+      "condicion": "SAC"
+    },
+    {
+      "origen": "det_existe_bd",
+      "destino": "ag_sac_haulmer",
+      "tipo": "flujo",
+      "vista": "embudo",
+      "condicion": "No"
+    },
+    {
+      "origen": "det_existe_bd",
+      "destino": "det_tipificado",
+      "tipo": "flujo",
+      "vista": "embudo",
+      "condicion": "Sí"
+    },
+    {
+      "origen": "det_tipificado",
+      "destino": "ag_onboarding",
+      "tipo": "flujo",
+      "vista": "embudo",
+      "condicion": "ONB"
+    },
+    {
+      "origen": "det_tipificado",
+      "destino": "det_partner",
+      "tipo": "flujo",
+      "vista": "embudo",
+      "condicion": "SAC"
+    },
+    {
+      "origen": "det_partner",
+      "destino": "ag_partner",
+      "tipo": "flujo",
+      "vista": "embudo",
+      "condicion": "Sí"
+    },
+    {
+      "origen": "det_partner",
+      "destino": "ag_sac_haulmer",
+      "tipo": "flujo",
+      "vista": "embudo",
+      "condicion": "No"
+    }
+  ],
+  "parametros": [],
+  "reglas_ruteo": [
+    {
+      "id": "r_ventas",
+      "prioridad": 1,
+      "cuando": {
+        "intencion": "VENTAS"
+      },
+      "destino": "ag_ventas",
+      "motivo": "VENTAS",
+      "explicacion": "El clasificador leyó intención de compra. El mensaje no entra al embudo de servicio y va al Agente IA Ventas.",
+      "path": [
+        "cliente",
+        "ag_clasificador",
+        "ag_ventas"
+      ]
+    },
+    {
+      "id": "r_sac_no_bd",
+      "prioridad": 2,
+      "cuando": {
+        "intencion": "SAC",
+        "existe_en_bd": false
+      },
+      "destino": "ag_sac_haulmer",
+      "motivo": "SAC_NO_EN_BD",
+      "explicacion": "El número no está en la base. Sale en la primera capa, directo al Agente IA SAC.",
+      "path": [
+        "cliente",
+        "ag_clasificador",
+        "det_existe_bd",
+        "ag_sac_haulmer"
+      ]
+    },
+    {
+      "id": "r_sac_onboarding",
+      "prioridad": 3,
+      "cuando": {
+        "intencion": "SAC",
+        "existe_en_bd": true,
+        "dominio_tipificado": "onboarding"
+      },
+      "destino": "ag_onboarding",
+      "motivo": "SAC_ONBOARDING",
+      "explicacion": "El número está en la base y el tipificado apunta a onboarding. Atiende el Agente IA Onboarding.",
+      "path": [
+        "cliente",
+        "ag_clasificador",
+        "det_existe_bd",
+        "det_tipificado",
+        "ag_onboarding"
+      ]
+    },
+    {
+      "id": "r_sac_partner",
+      "prioridad": 4,
+      "cuando": {
+        "intencion": "SAC",
+        "existe_en_bd": true,
+        "dominio_tipificado": "sac",
+        "es_partner": true
+      },
+      "destino": "ag_partner",
+      "motivo": "SAC_PARTNER",
+      "explicacion": "El tipificado es SAC y el contacto es Partner. Redirige al Agente IA Partner.",
+      "path": [
+        "cliente",
+        "ag_clasificador",
+        "det_existe_bd",
+        "det_tipificado",
+        "det_partner",
+        "ag_partner"
+      ]
+    },
+    {
+      "id": "r_sac_no_partner",
+      "prioridad": 5,
+      "cuando": {
+        "intencion": "SAC",
+        "existe_en_bd": true,
+        "dominio_tipificado": "sac",
+        "es_partner": false
+      },
+      "destino": "ag_sac_haulmer",
+      "motivo": "SAC_NO_PARTNER",
+      "explicacion": "El tipificado es SAC y el contacto no es Partner. Atiende el Agente IA SAC.",
+      "path": [
+        "cliente",
+        "ag_clasificador",
+        "det_existe_bd",
+        "det_tipificado",
+        "det_partner",
+        "ag_sac_haulmer"
+      ]
+    }
+  ],
+  "campanas": [
+    {
+      "id": "camp_abono_flexible",
+      "nombre": "Abono flexible",
+      "espera_respuesta": true,
+      "tiempo_permanencia_dias": 5,
+      "descripcion": "Campaña para aumentar la usabilidad del abono flexible.",
+      "es_partner": true
+    },
+    {
+      "id": "camp_rutitas",
+      "nombre": "Rutitas",
+      "espera_respuesta": true,
+      "tiempo_permanencia_dias": 20,
+      "es_partner": false
+    }
+  ],
+  "textos": {
+    "embudo_intro": "Cada comunicación proactiva (un mensaje que enviamos por WhatsApp) debe responder si se espera respuesta del cliente. Si la respuesta es sí, se registra el teléfono y los campos de la campaña. Si es no, no se registra y no pasa nada."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "process-intelligence",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "layout:galaxia": "tsx scripts/layout-galaxia.ts",
+    "layout:flujo": "tsx scripts/layout-flujo.ts",
+    "layout:embudo": "tsx scripts/layout-embudo.ts",
+    "layout:atencion": "tsx scripts/layout-atencion.ts",
+    "test": "vitest run",
+    "capture": "playwright test"
+  },
+  "dependencies": {
+    "d3-zoom": "^3.0.0",
+    "motion": "^12.23.12",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/d3-force": "^3.0.10",
+    "@types/d3-zoom": "^3.0.8",
+    "@types/node": "^24.3.1",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "d3-force": "^3.0.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.4",
+    "vitest": "^3.2.4"
+  }
+}
