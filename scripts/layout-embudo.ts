@@ -14,7 +14,8 @@ const POS_EMBUDO: Record<string, Pos> = {
   det_existe_bd: { x: 1040, y: 380 },
   ag_sac_haulmer: { x: 1260, y: 560 },
   det_tipificado: { x: 820, y: 540 },
-  ag_onboarding: { x: 500, y: 720 },
+  ag_onboarding: { x: 760, y: 720 },
+  eq_customer_success: { x: 560, y: 720 },
   det_partner: { x: 1040, y: 700 },
   ag_partner: { x: 860, y: 840 },
 };

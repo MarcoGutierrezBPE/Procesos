@@ -61,10 +61,12 @@ test("Embudo: campañas, capas y ruta Rutitas a SAC", async ({ page }) => {
   await expect(page.getByText("Agente IA SAC - Haulmer")).toBeVisible();
   await expect(page.getByText("Agente IA Onboarding")).toBeVisible();
   await expect(page.getByText("Agente IA Partner")).toBeVisible();
+  await expect(page.locator('svg [aria-label="Customer Success"]')).toBeVisible();
   await expect(page.getByText("Meta System")).toHaveCount(0);
   await expect(page.getByText("Agente IA SAC - Hosting")).toHaveCount(0);
 
   await page.getByRole("radio", { name: "Rutitas" }).click();
+  await expect(page.getByRole("radio", { name: "CS" })).toBeVisible();
   await page.getByRole("button", { name: "Ejecutar" }).click();
   await expect(page.getByText("El tipificado es SAC y el contacto no es Partner")).toBeVisible({
     timeout: 5000,

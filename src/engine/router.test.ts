@@ -55,6 +55,24 @@ describe("route", () => {
     ]);
   });
 
+  it("SAC en base con tipificado CS va a Customer Success", () => {
+    const result = route(
+      { ...basePerfil, existe_en_bd: true, permanencia_dias: 20, en_campana_activa: true },
+      { ...baseClasificacion, dominio_tipificado: "cs" },
+      reglas,
+    );
+    expect(result.destino).toBe("eq_customer_success");
+    expect(result.regla_id).toBe("r_sac_cs");
+    expect(result.path).toEqual([
+      "cliente",
+      "ag_clasificador",
+      "det_existe_bd",
+      "det_tipificado",
+      "eq_customer_success",
+    ]);
+    expect(result.path).not.toContain("det_partner");
+  });
+
   it("SAC en base, tipificado SAC y Partner va al Agente IA Partner", () => {
     const result = route(
       {

@@ -117,7 +117,7 @@
         "y": 220
       },
       "posEmbudo": {
-        "x": 500,
+        "x": 760,
         "y": 720
       }
     },
@@ -243,6 +243,10 @@
       "pos": {
         "x": 1149,
         "y": 184
+      },
+      "posEmbudo": {
+        "x": 560,
+        "y": 720
       }
     },
     {
@@ -351,7 +355,7 @@
       "capa": "flujo",
       "tipo": "determinista",
       "estado": "produccion",
-      "descripcion": "Segunda capa: el tipificado del clasificador decide si el caso va a SAC o a Onboarding.",
+      "descripcion": "Segunda capa: el tipificado del clasificador decide si el caso va a SAC, Onboarding o Customer Success.",
       "posEmbudo": {
         "x": 820,
         "y": 540
@@ -474,6 +478,13 @@
     },
     {
       "origen": "det_tipificado",
+      "destino": "eq_customer_success",
+      "tipo": "flujo",
+      "vista": "embudo",
+      "condicion": "CS"
+    },
+    {
+      "origen": "det_tipificado",
       "destino": "det_partner",
       "tipo": "flujo",
       "vista": "embudo",
@@ -548,8 +559,27 @@
       ]
     },
     {
-      "id": "r_sac_partner",
+      "id": "r_sac_cs",
       "prioridad": 4,
+      "cuando": {
+        "intencion": "SAC",
+        "existe_en_bd": true,
+        "dominio_tipificado": "cs"
+      },
+      "destino": "eq_customer_success",
+      "motivo": "SAC_CS",
+      "explicacion": "El número está en la base y el tipificado apunta a CS. El caso va a Customer Success.",
+      "path": [
+        "cliente",
+        "ag_clasificador",
+        "det_existe_bd",
+        "det_tipificado",
+        "eq_customer_success"
+      ]
+    },
+    {
+      "id": "r_sac_partner",
+      "prioridad": 5,
       "cuando": {
         "intencion": "SAC",
         "existe_en_bd": true,
@@ -570,7 +600,7 @@
     },
     {
       "id": "r_sac_no_partner",
-      "prioridad": 5,
+      "prioridad": 6,
       "cuando": {
         "intencion": "SAC",
         "existe_en_bd": true,

@@ -9,7 +9,7 @@ export type Perfil = {
 
 export type Clasificacion = {
   intencion: "VENTAS" | "SAC";
-  dominio_tipificado?: "ventas" | "sac" | "onboarding" | "campanas";
+  dominio_tipificado?: "ventas" | "sac" | "onboarding" | "campanas" | "cs";
   confianza: number;
 };
 

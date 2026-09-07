@@ -2,7 +2,7 @@ import type { Campana } from "../schema/ecosystem";
 import type { ResultadoRuteo } from "../engine/router";
 
 type Intencion = "VENTAS" | "SAC";
-type Dominio = "sac" | "onboarding";
+type Dominio = "sac" | "onboarding" | "cs";
 
 export type RespuestasSim = {
   esperaRespuesta: boolean;
@@ -203,6 +203,15 @@ export function PanelSimulacion({
               onChange={() => onDominio("onboarding")}
             />
             ONB
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="tipificado"
+              checked={dominio === "cs"}
+              onChange={() => onDominio("cs")}
+            />
+            CS
           </label>
         </fieldset>
       ) : null}
